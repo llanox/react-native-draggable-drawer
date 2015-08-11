@@ -10,11 +10,12 @@ module.exports = function (screen_height ) {
     var tension;
     var _scrollSpring;
     var _springSystem;
+    var initialPosition;
 
     
      module.calculateInitialPosition = function ( initial_used_space ){
          initialUsedSpace = Math.abs(initial_used_space);
-         var initialPosition = (screen_height * ( 1 - initialUsedSpace ));
+         initialPosition = (screen_height * ( 1 - initialUsedSpace ));
          return initialPosition;
      };
 
@@ -22,8 +23,12 @@ module.exports = function (screen_height ) {
         return initialUsedSpace;
     };
 
+    module.getInitialPosition = function(){
+        return initialPosition;
+    };
 
-      module.setupAnimation = function ( higher_tension, friction, callbackPositionUpdated ){
+
+    module.setupAnimation = function ( higher_tension, friction, callbackPositionUpdated ){
            
 
           tension = higher_tension;

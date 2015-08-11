@@ -8,8 +8,8 @@ var Dimensions = require('Dimensions');
 var SCREEN_HEIGHT = Dimensions.get('window').height;
 var DraggableDrawerHelper = require('./helpers/DraggableDrawerHelper')(SCREEN_HEIGHT);
 
-var TENSION = 5000;
-var FRICTION = 1200;
+var TENSION = 800;
+var FRICTION = 90;
 
 
 var {
@@ -18,9 +18,7 @@ var {
   Text,
   Image,
   View,
-  PanResponder,
-  StyleSheet
-  
+  PanResponder  
 } = React;
 
 
@@ -37,6 +35,14 @@ var component = React.createClass({
 
     this.setState({position: position });
     this._previousTop = position;
+
+    var initialPosition = DraggableDrawerHelper.getInitialPosition();
+   
+    console.log('initial postion '+initialPosition+' position '+position)
+
+    if( initialPosition === position){
+        this.props.onInitialPositionReached();
+    }
 
   },
 

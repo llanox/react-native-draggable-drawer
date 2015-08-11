@@ -41,13 +41,15 @@ var component = React.createClass({
 
        if(diff>=0){
           var scaleTo = diff/DEFAULT_DRAWER_USED_SPACE;
-          console.log(' scaleTO ', scaleTo);
           this.setState({scale: (this.state.scale + scaleTo ) });
        }
   },
 
+  onInitialPositionReached: function(){
+        console.log('InitialPositionReached ',true)
+        this.setState({scale: 1 });
 
-
+  },
 
   render: function() {
 
@@ -91,6 +93,7 @@ var component = React.createClass({
     return (    
         <DraggableDrawer 
         onDragDown = {this.onDrawerDragDown}
+        onInitialPositionReached = {this.onInitialPositionReached}
         initialUsedSpace  = {DEFAULT_DRAWER_USED_SPACE}       
         renderContainerView = {() => containerView}
         renderDrawerView = {() => drawerView} />
