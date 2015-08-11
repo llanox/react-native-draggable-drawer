@@ -6,7 +6,7 @@ var rebound = require('rebound');
 
 var Dimensions = require('Dimensions');
 var SCREEN_HEIGHT = Dimensions.get('window').height;
-var DraggableDrawerHelper = require('./DraggableDrawer')(SCREEN_HEIGHT);
+var DraggableDrawerHelper = require('./helpers/DraggableDrawerHelper')(SCREEN_HEIGHT);
 
 var TENSION = 5000;
 var FRICTION = 1200;
