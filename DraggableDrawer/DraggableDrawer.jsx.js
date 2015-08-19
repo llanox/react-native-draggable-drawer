@@ -27,8 +27,8 @@ var component = React.createClass({
   getInitialState: function() {
     // naming it initialX clearly indicates that the only purpose
     // of the passed down prop is to initialize something internally    
-      var initialPosition = DraggableDrawerHelper.calculateInitialPosition(this.props.initialUsedSpace);
-      return {position: initialPosition };
+      var initialDrawerSize = DraggableDrawerHelper.calculateInitialPosition(this.props.initialDrawerSize);
+      return {position: initialDrawerSize };
   },
 
   onUpdatePosition: function (position){
@@ -38,10 +38,9 @@ var component = React.createClass({
 
     var initialPosition = DraggableDrawerHelper.getInitialPosition();
    
-    console.log('initial postion '+initialPosition+' position '+position)
 
     if( initialPosition === position){
-        this.props.onInitialPositionReached();
+       this.props.onInitialPositionReached && this.props.onInitialPositionReached();
     }
 
   },
@@ -93,6 +92,13 @@ var component = React.createClass({
 
      if (!this.center) return;
      DraggableDrawerHelper.startAnimation(gestureState.vy,gestureState.moveY);
+
+     var isGoingToUp = ( gestureState.vy < 0 )? true : false; 
+     
+     console.log(' move Finished ');
+     this.props.onRelease(isGoingToUp);
+
+
 
   },
 

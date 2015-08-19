@@ -9,6 +9,7 @@ var precomputeStyle = require('precomputeStyle');
 
 
 var {
+  Animated,
   StyleSheet,
   Text,
   Image,
@@ -22,7 +23,8 @@ var Dimensions = require('Dimensions');
 var SCREEN_HEIGHT = Dimensions.get('window').height;
 var HIGHER_TENSION = 5000;
 var FRICTION = 1200;
-var DEFAULT_DRAWER_USED_SPACE = 0.15;
+//maximum drawer size is 1 that means its use 100% of avalaible space on the screen
+var DEFAULT_DRAWER_SIZE = 0.30;
 var DraggableDrawer = require('./DraggableDrawer.jsx');
 
 
@@ -31,23 +33,38 @@ var DraggableDrawer = require('./DraggableDrawer.jsx');
 var component = React.createClass({
 
   getInitialState: function() {
-    return {scale: 1};
+    return {scale: new Animated.Value(1) };
   },
 
-  onDrawerDragDown: function( currentUsedSpace ) {      
-       var diff = DEFAULT_DRAWER_USED_SPACE - currentUsedSpace;
-      
-       console.log(' diff ', diff);
+  onDragDown: function( drawerPosition ) {   
 
+       var diff = DEFAULT_DRAWER_SIZE - drawerPosition;
+      
+     
        if(diff>=0){
-          var scaleTo = diff/DEFAULT_DRAWER_USED_SPACE;
-          this.setState({scale: (this.state.scale + scaleTo ) });
+          var scaleTo = 1 - ( (1 * drawerPosition)/DEFAULT_DRAWER_SIZE );
+          this.state.scale.setValue(1 + scaleTo); 
        }
   },
 
-  onInitialPositionReached: function(){
-        console.log('InitialPositionReached ',true)
-        this.setState({scale: 1 });
+
+  onRelease: function( isGoingUp ){
+
+    console.log(' onRelease drawer '+ isGoingUp);
+   
+    if(isGoingUp) return;
+
+
+     Animated.spring(  // Base: spring, decay, timing
+        this.state.scale,  // Animate `scale`
+          { 
+            toValue: 1,  // Animate to smaller size
+            friction: 20,  // Bouncier spring
+            tension: 20  // Controls speed
+
+          } )
+     .start(); 
+
 
   },
 
@@ -55,10 +72,10 @@ var component = React.createClass({
 
 
 
-    var imageStyle = { width: 250, height: 200, transform: [{scaleX: this.state.scale}, {scaleY: this.state.scale}]};
+    var imageStyle = { flex:1, alignSelf:'center', width: 250, height: 250, transform: [{scaleX: this.state.scale}, {scaleY: this.state.scale}]};
 
     var bouncingView = (
-       <Image 
+       <Animated.Image 
        source={{uri: "https://facebook.github.io/react-native/img/ReboundExample.png"}} 
        style={imageStyle} />
     );
@@ -92,9 +109,9 @@ var component = React.createClass({
 
     return (    
         <DraggableDrawer 
-        onDragDown = {this.onDrawerDragDown}
-        onInitialPositionReached = {this.onInitialPositionReached}
-        initialUsedSpace  = {DEFAULT_DRAWER_USED_SPACE}       
+        onDragDown = {this.onDragDown}
+        onRelease = {this.onRelease}
+        initialDrawerSize  = {DEFAULT_DRAWER_SIZE}       
         renderContainerView = {() => containerView}
         renderDrawerView = {() => drawerView} />
     )
