@@ -21,7 +21,7 @@ $ npm i react-native-draggable-drawer --save
 | :------------ |:---------------:| :---------------:| :-----|
 | onDragDown | undefined | `function` | If you pass a function as parameter it will be notified when the user drag down the drawer  |
 | onRelease | undefined | `function` | If you pass a function as parameter it will be notified when the user release the drawer after drag it |
-| initialDrawerSize | 0.30 | `number` | It's the initial position or size for Drawer component. The maximum drawer size is 1 that means its 100% of avalaible space on the screen |
+| initialDrawerSize | 0.0 | `number` | It's the initial position or size for Drawer component. The maximum drawer size is 1 that means its 100% of avalaible space on the screen |
 | renderContainerView | undefined | `View` | Pass as parameter a renderable react component to show as container. |
 | renderDrawerView | undefined | `View` | Pass as parameter a renderable react component to show as drawer. |
 
