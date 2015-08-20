@@ -4,6 +4,7 @@
   "keywords": [
     "react-component",
     "react-native",
+    "draggable-drawer"
     "ios"
   ],
   "description": "DraggableDrawer component for React Native.",
