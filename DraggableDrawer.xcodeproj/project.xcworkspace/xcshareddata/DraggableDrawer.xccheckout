@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>28C9F8DA-0CC3-466A-AA7E-F6BCA7A8FB3F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DraggableDrawer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F968372AC94B385A3EB4183EEBE5C060D367F767</key>
+		<string>https://github.com/llanox/react-native-draggable-drawer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DraggableDrawer/DraggableDrawer.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F968372AC94B385A3EB4183EEBE5C060D367F767</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/llanox/react-native-draggable-drawer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F968372AC94B385A3EB4183EEBE5C060D367F767</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F968372AC94B385A3EB4183EEBE5C060D367F767</string>
+			<key>IDESourceControlWCCName</key>
+			<string>react-native-draggable-drawer</string>
+		</dict>
+	</array>
+</dict>
+</plist>
