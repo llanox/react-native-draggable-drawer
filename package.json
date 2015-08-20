@@ -19,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/llanox/react-native-draggable-drawer.git"
   },
-   "author": "llanox",
+   "author": "Gabriel Gutierrez <correo.del.llanox@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/llanox/react-native-draggable-drawer/issues"
