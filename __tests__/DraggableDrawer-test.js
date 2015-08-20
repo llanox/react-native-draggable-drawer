@@ -2,7 +2,7 @@
  * Created by jgabrielgutierrez on 15-08-10.
  */
 
-jest.dontMock('../DraggableDrawerHelper');
+jest.dontMock('../helpers/DraggableDrawerHelper');
 jest.dontMock('rebound');
 
 
