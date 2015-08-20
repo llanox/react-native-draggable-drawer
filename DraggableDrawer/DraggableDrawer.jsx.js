@@ -95,8 +95,7 @@ var component = React.createClass({
 
      var isGoingToUp = ( gestureState.vy < 0 )? true : false; 
      
-     console.log(' move Finished ');
-     this.props.onRelease(isGoingToUp);
+     this.props.onRelease && this.props.onRelease(isGoingToUp);
 
 
 
@@ -139,7 +138,7 @@ var styles = StyleSheet.create({
   },
   drawer: {
     flex:1,
-    backgroundColor: '#0088ff',
+    backgroundColor: '#9AABC1',
   },
   container: {
      position: 'absolute',
@@ -147,7 +146,7 @@ var styles = StyleSheet.create({
      left:0,
      bottom: 0,
      right: 0,
-     backgroundColor: '#aacccc',
+     backgroundColor: '#EAF2F2',
   },
   
 });
