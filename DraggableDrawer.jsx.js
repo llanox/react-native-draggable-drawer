@@ -4,8 +4,6 @@
 var React = require('react-native');
 var rebound = require('rebound');
 
-var Dimensions = require('Dimensions');
-var SCREEN_HEIGHT = Dimensions.get('window').height;
 var DraggableDrawerHelper = require('./helpers/DraggableDrawerHelper')(SCREEN_HEIGHT);
 
 var TENSION = 800;
@@ -18,8 +16,13 @@ var {
   Text,
   Image,
   View,
-  PanResponder  
+  PanResponder,
+  Dimensions  
 } = React;
+
+
+var SCREEN_HEIGHT = Dimensions.get('window').height;
+
 
 
 var component = React.createClass({
