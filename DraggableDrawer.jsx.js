@@ -4,8 +4,6 @@
 var React = require('react-native');
 var rebound = require('rebound');
 
-var DraggableDrawerHelper = require('./helpers/DraggableDrawerHelper')(SCREEN_HEIGHT);
-
 var TENSION = 800;
 var FRICTION = 90;
 
@@ -20,8 +18,8 @@ var {
   Dimensions  
 } = React;
 
-
 var SCREEN_HEIGHT = Dimensions.get('window').height;
+var DraggableDrawerHelper = require('./helpers/DraggableDrawerHelper')(SCREEN_HEIGHT);
 
 
 
