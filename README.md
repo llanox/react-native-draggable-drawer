@@ -25,4 +25,10 @@ $ npm i react-native-draggable-drawer --save
 | renderContainerView | undefined | `View` | Pass as parameter a renderable react component to show as container. |
 | renderDrawerView | undefined | `View` | Pass as parameter a renderable react component to show as drawer. |
 
+#### TODO
+- We need use Animated  instead of rebound library. Rebound isn't recommended by react-native developers
+
+#### Credits
+
+It was based on [@kureevalexey](https://twitter.com/kureevalexey)'s [react-native-side-menu](https://github.com/Kureev/react-native-side-menu)
 
