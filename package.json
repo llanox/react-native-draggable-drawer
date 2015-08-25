@@ -1,10 +1,10 @@
 {
   "name": "react-native-draggable-drawer",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "keywords": [
     "react-component",
     "react-native",
-    "draggable-drawer",
+    "vertical draggable drawer",
     "ios"
   ],
   "description": "DraggableDrawer component for React Native.",
