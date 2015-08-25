@@ -25,7 +25,7 @@ var HIGHER_TENSION = 5000;
 var FRICTION = 1200;
 //maximum drawer size is 1 that means its use 100% of avalaible space on the screen
 var DEFAULT_DRAWER_SIZE = 0.30;
-var DraggableDrawer = require('./DraggableDrawer.jsx');
+var DraggableDrawer = require('react-native-draggable-drawer');
 
 
 

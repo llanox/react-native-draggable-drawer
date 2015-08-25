@@ -25,4 +25,4 @@ var component = React.createClass({
 
 
 
-AppRegistry.registerComponent('draggabledrawer', () => component);
+AppRegistry.registerComponent('DraggableDrawerImageBouncing', () => component);
