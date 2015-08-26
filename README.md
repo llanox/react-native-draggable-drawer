@@ -30,5 +30,5 @@ $ npm i react-native-draggable-drawer --save
 
 #### Credits
 
-It was based on [@kureevalexey](https://twitter.com/kureevalexey)'s [react-native-side-menu](https://github.com/Kureev/react-native-side-menu)
+That component was developed from [@kureevalexey](https://twitter.com/kureevalexey)'s [react-native-side-menu](https://github.com/Kureev/react-native-side-menu)
 
