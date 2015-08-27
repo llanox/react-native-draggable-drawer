@@ -24,7 +24,8 @@
    "author": "Gabriel Gutierrez <correo.del.llanox@gmail.com>",
    "contributors": [{
    "name": "Georg Göttlich",
-   "email": "mail@dvine.de"
+   "email": "mail@dvine.de",
+   "url": "https://github.com/dvine-multimedia"
    }],
   "license": "MIT",
   "bugs": {
@@ -43,6 +44,9 @@
       "es6",
       "js"
     ]
-   }
+   },
+  "peerDependencies": {
+    "react-native": ">= 0.9.0"
+  }
    
 }

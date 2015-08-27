@@ -75,8 +75,8 @@ var component = React.createClass({
     if (!this.center) return;
     
     var currentValue = Math.abs(gestureState.moveY / SCREEN_HEIGHT);
-    var isGoingToUp = ( gestureState.vy < 0 )? true : false; 
-
+    var isGoingToUp = ( gestureState.vy < 0 );
+    
     //Here, I'm subtracting %5 of screen size from edge drawer position to be closer as possible to finger location when dragging the drawer view
     var position = gestureState.moveY - SCREEN_HEIGHT * 0.05;
       
@@ -92,9 +92,10 @@ var component = React.createClass({
   moveFinished: function(gestureState) {
 
      if (!this.center) return;
+
      DraggableDrawerHelper.startAnimation(gestureState.vy,gestureState.moveY);
 
-     var isGoingToUp = ( gestureState.vy < 0 )? true : false; 
+     var isGoingToUp = ( gestureState.vy < 0 );
      
      this.props.onRelease && this.props.onRelease(isGoingToUp);
 
