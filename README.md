@@ -26,7 +26,8 @@ $ npm i react-native-draggable-drawer --save
 | renderDrawerView | undefined | `View` | Pass as parameter a renderable react component to show as drawer. |
 
 #### TODO
-- We need use Animated  instead of rebound library. Rebound isn't recommended by react-native developers
+
+- [ ] We need use Animated  instead of rebound library. Rebound isn't recommended by react-native developers
 
 #### Credits
 
