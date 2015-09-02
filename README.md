@@ -31,5 +31,8 @@ $ npm i react-native-draggable-drawer --save
 
 #### Credits
 
-Thanks to [@kureevalexey] for [react-native-side-menu](https://github.com/Kureev/react-native-side-menu) module that gave me an idea how to develop this module.
+- Thanks to [@kureevalexey] for [react-native-side-menu](https://github.com/Kureev/react-native-side-menu) module that gave me an idea how to develop this module.
+
+- [react-native-parallax-view](https://github.com/lelandrichardson/react-native-parallax-view)
+
 
