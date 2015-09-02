@@ -2,8 +2,14 @@
  * Created by jgabrielgutierrez on 15-08-10.
  */
 
-jest.dontMock('../helpers/DraggableDrawerHelper');
-jest.dontMock('rebound');
+
+jest
+  .autoMockOff()
+  .setMock('Text', {})
+  .setMock('Text', {})
+  .setMock('View', {})
+  .setMock('Image', {})
+  .setMock('React', {Component: class {}});
 
 
 describe('DraggableDrawerHelper ', function(){
@@ -30,18 +36,10 @@ describe('DraggableDrawerHelper ', function(){
     });
 
 
-    it('configures an animation for the component ', function() {
-
-
-        DraggableDrawerHelper.setupAnimation( HIGHER_TENSION, FRICTION, callbackPositionUpdated )
-
-        expect(callbackPositionUpdated).toBeCalled()
-
-
-    });
-
 
     it('starts an animation for the component ', function() {
+
+         DraggableDrawerHelper.setupAnimation( HIGHER_TENSION, FRICTION, callbackPositionUpdated )
 
         DraggableDrawerHelper.startAnimation( VELOCITY_Y, initial_position)
 

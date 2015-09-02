@@ -1,8 +1,12 @@
 
 'use strict'
 
-var rebound = require('rebound');
-var Animated = require('Animated');
+
+var React = require('react-native');
+
+var {
+  Animated
+} = React;
 
 
 module.exports = function (screen_height ) {
