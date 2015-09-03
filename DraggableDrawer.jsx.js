@@ -2,7 +2,6 @@
 'use strict'
 
 var React = require('react-native');
-var rebound = require('rebound');
 
 var TENSION = 800;
 var FRICTION = 90;
@@ -14,6 +13,7 @@ var {
   Text,
   Image,
   View,
+  Animated
   PanResponder,
   Dimensions  
 } = React;
@@ -44,6 +44,7 @@ var component = React.createClass({
        this.props.onInitialPositionReached && this.props.onInitialPositionReached();
     }
 
+
   },
 
   componentWillMount: function() {   
@@ -53,7 +54,7 @@ var component = React.createClass({
                 (position) => {
                  
                   if (!this.center) return;
-                     this.onUpdatePosition(position);                  
+                     this.onUpdatePosition(position.value);                  
                 }
       );
 
@@ -91,6 +92,8 @@ var component = React.createClass({
 
   moveFinished: function(gestureState) {
 
+     console.log('moveFinished ');
+
      if (!this.center) return;
 
      DraggableDrawerHelper.startAnimation(gestureState.vy,gestureState.moveY);
@@ -118,12 +121,12 @@ var component = React.createClass({
           {containerView}
          </View>        
     
-        <View
+        <Animated.View
           style={[drawerPosition, styles.drawer]}
           ref={(center) => this.center = center}
           {...this._panGesture.panHandlers}>
           {drawerView}
-        </View>
+        </Animated.View>
       </View>
     )
   },

@@ -56,6 +56,8 @@ module.exports = function (screen_height ) {
       module.startAnimation = function (velocityY, positionY ){     
 
 
+         console.log('creating animation ');
+
          var isGoingToUp = ( velocityY < 0 )? true : false;   
          var speed = Math.abs(velocityY);    
          var currentPosition = Math.abs(positionY / screen_height); 
@@ -63,12 +65,18 @@ module.exports = function (screen_height ) {
 
          var position = new Animated.Value(currentPosition);
          
-         Animated.spring(position, {toValue: endPosition, 
-                                   velocity: speed, 
-                                   tension:this.tension, 
-                                   friction: this.friction 
+
+         position.removeAllListeners();
+         
+         console.log('parameters up: '+isGoingToUp+' speed '+speed+' currentPosition '+ currentPosition+' endPosition '+endPosition)
+
+         Animated.spring( position , {
+                                     toValue: 0.1, 
+                                     friction: 0.03
                                    }
-          ).start(this.callbackPositionUpdated);
+          ).start();
+
+          position.addListener(this.callbackPositionUpdated);
 
       
       };
