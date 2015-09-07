@@ -13,7 +13,7 @@ var {
   Text,
   Image,
   View,
-  Animated
+  Animated,
   PanResponder,
   Dimensions  
 } = React;
@@ -29,13 +29,16 @@ var component = React.createClass({
     // naming it initialX clearly indicates that the only purpose
     // of the passed down prop is to initialize something internally    
       var initialDrawerSize = DraggableDrawerHelper.calculateInitialPosition(this.props.initialDrawerSize);
-      return {position: initialDrawerSize };
+      return {position: new Animated.Value(initialDrawerSize) };
   },
 
   onUpdatePosition: function (position){
 
-    this.setState({position: position });
+    this.state.position.setValue(position);
+
     this._previousTop = position;
+ 
+    console.log('Position ',position);
 
     var initialPosition = DraggableDrawerHelper.getInitialPosition();
    
@@ -111,7 +114,7 @@ var component = React.createClass({
     var drawerView = this.props.renderDrawerView ? this.props.renderDrawerView() : null;
     
    var drawerPosition = {
-      transform: [{translateY: this.state.position}],
+      top: this.state.position
     };
       
     return (

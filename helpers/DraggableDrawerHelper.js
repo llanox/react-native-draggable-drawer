@@ -58,21 +58,26 @@ module.exports = function (screen_height ) {
 
          console.log('creating animation ');
 
-         var isGoingToUp = ( velocityY < 0 )? true : false;   
-         var speed = Math.abs(velocityY);    
-         var currentPosition = Math.abs(positionY / screen_height); 
-         var endPosition = isGoingToUp? 0 : 1 - initialUsedSpace; 
+          var isGoingToUp = ( velocityY < 0 )? true : false;   
+          var speed = Math.abs(velocityY);    
+          var currentPosition = Math.abs(positionY / screen_height); 
+          var endPosition = isGoingToUp? 0 : 1 - initialUsedSpace; 
 
-         var position = new Animated.Value(currentPosition);
+          var position = new Animated.Value(currentPosition);
          
 
-         position.removeAllListeners();
+          position.removeAllListeners();
          
-         console.log('parameters up: '+isGoingToUp+' speed '+speed+' currentPosition '+ currentPosition+' endPosition '+endPosition)
+          var config = { tension: 10,
+                         friction: 3, 
+                         velocity: velocityY
+                       };
+       
+          console.log('configuration : '+config+' '+endPosition)
 
-         Animated.spring( position , {
-                                     toValue: 0.1, 
-                                     friction: 0.03
+          Animated.spring( position , {
+                                     toValue: endPosition,
+                                     ...config
                                    }
           ).start();
 
